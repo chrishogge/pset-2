@@ -43,7 +43,7 @@ public class ProblemSet2 {
         System.out.print("\nAGE\t : " + age);
         System.out.print("\nHOMETOWN : " + homeTown);
 
-        in.close();
+        // in.close();
 
         /*
          * Exercise 2.
@@ -52,6 +52,30 @@ public class ProblemSet2 {
          * bills, quarters, dimes, nickels, and pennies needed to produce this amount.
          */
 
+         final double DOLLAR = 100;
+         final double QUARTER = 25;
+         final double DIME = 10;
+         final double NICKEL = 5;
+         final double PENNY = 1;
+
+         System.out.print("\nEnter a dollar amount: ");
+         double moneyImput = in.nextDouble();
+
+         double dollars = (moneyImput - (moneyImput%1))/1;
+         moneyImput = (moneyImput - Math.floor(moneyImput/1));
+         double quarters = (moneyImput -(moneyImput%0.25))/0.25;
+         moneyImput = (moneyImput - Math.floor(moneyImput*0.25));
+         double dimes = (moneyImput - (moneyImput%0.1))/0.1;
+         moneyImput = (moneyImput - Math.floor(moneyImput*0.1));
+         double nickles = (moneyImput - (moneyImput%0.05))/0.05;
+         moneyImput = (moneyImput - Math.floor(moneyImput*0.05));
+         double pennies = (moneyImput - (moneyImput%0.01))/0.01;
+         moneyImput = (moneyImput - Math.floor(moneyImput*0.01));
+         System.out.println(dollars);
+         System.out.println(quarters);
+         System.out.println(dimes);
+         System.out.println(nickles);
+         System.out.println(pennies);
 
 
         /*
