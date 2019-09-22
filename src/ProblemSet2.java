@@ -27,7 +27,7 @@ public class ProblemSet2 {
          * Prompt the user to enter the following information (in order): first name, last
          * name, grade, age, and hometown.
          */
-         
+
         System.out.print("\nEnter your first name: ");
         String firstName = in.nextLine();
         System.out.print("Enter your last name: ");
@@ -42,7 +42,7 @@ public class ProblemSet2 {
         System.out.print("\nNAME\t : " + firstName + " " + lastName);
         System.out.print("\nGRADE\t : " + grade);
         System.out.print("\nAGE\t : " + age);
-        System.out.print("\nHOMETOWN : " + homeTown);
+        System.out.print("\nHOMETOWN : " + homeTown + '\n');
 
         /*
          * Exercise 2.
@@ -82,9 +82,10 @@ public class ProblemSet2 {
          penniesRequired = changeArray[0];
          changeRemaining = changeArray[1];
 
-        System.out.print("\nDOLLARS  : " + dollarsRequired + "\nQUARTERS : " + quartersRequired
-         + "\nDIMES    : " + dimesRequired + "\nNICKLES  : " + nickelsRequired + "\nPENNIES  : "
-         + penniesRequired);
+        System.out.print("\nDOLLARS  : " + String.format("%.0f",dollarsRequired) + "\nQUARTERS : "
+        + String.format("%.0f",quartersRequired) + "\nDIMES    : " + String.format("%.0f",dimesRequired)
+         + "\nNICKLES  : " + String.format("%.0f",nickelsRequired) + "\nPENNIES  : "
+         + String.format("%.0f",penniesRequired) + "\n");
 
         /*
          * Exercise 3.
@@ -93,6 +94,40 @@ public class ProblemSet2 {
          * bills and coins needed to produce this amount.
          */
 
+         final double TEN_DOLLAR = 1000;
+         final double FIVE_DOLLAR = 500;
+         double tensRequired;
+         double fivesRequired;
+
+         System.out.print("\nEnter a dollar amount : ");
+         moneyImput = (in.nextDouble())*100;
+
+         changeArray = makeChange(moneyImput,TEN_DOLLAR);
+         tensRequired = changeArray[0];
+         changeRemaining = changeArray[1];
+         changeArray = makeChange(changeRemaining,FIVE_DOLLAR);
+         fivesRequired = changeArray[0];
+         changeRemaining = changeArray[1];
+         changeArray = makeChange(changeRemaining,DOLLAR);
+         dollarsRequired = changeArray[0];
+         changeRemaining = changeArray[1];
+         changeArray = makeChange(changeRemaining,QUARTER);
+         quartersRequired = changeArray[0];
+         changeRemaining = changeArray[1];
+         changeArray = makeChange(changeRemaining,DIME);
+         dimesRequired = changeArray[0];
+         changeRemaining = changeArray[1];
+         changeArray = makeChange(changeRemaining,NICKEL);
+         nickelsRequired = changeArray[0];
+         changeRemaining = changeArray[1];
+         changeArray = makeChange(changeRemaining,PENNY);
+         penniesRequired = changeArray[0];
+         changeRemaining = changeArray[1];
+
+         double billsRequired = tensRequired + fivesRequired + dollarsRequired;
+         double coinsRequired = quartersRequired + dimesRequired + nickelsRequired + penniesRequired;
+         System.out.print("\nBILLS : " + String.format("%.0f",billsRequired) +
+          "\nCOINS : " + String.format("%.0f",coinsRequired) +"\n");
 
 
         /*
