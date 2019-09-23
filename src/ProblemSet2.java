@@ -204,7 +204,15 @@ public class ProblemSet2 {
          * Given a diameter, print the area and circumference of the corresponding circle.
          */
 
-         
+         System.out.print("\nEnter a diameter: ");
+         double diameterInput = in.nextDouble();
+         double inputRadius = diameterInput/2;
+
+         double circleArea = Math.PI * Math.pow(inputRadius,2);
+         double circleCircumference = 2 * Math.PI * inputRadius;
+
+         System.out.println("\nAREA          : " + String.format("%.2f",circleArea)
+          + "\nCIRCUMFERENCE : " + String.format("%.2f",circleCircumference));
 
         /*
          * Exercise 7.
@@ -213,7 +221,18 @@ public class ProblemSet2 {
          * corresponding rectangle.
          */
 
+         System.out.print("\nEnter a length: ");
+         double inputLength = in.nextDouble();
+         System.out.print("Enter a width: ");
+         double inputWidth = in.nextDouble();
 
+         double inputArea = inputLength * inputWidth;
+         double inputPerimeter = 2*(inputLength) + 2*(inputWidth);
+         double inputDiagonal = Math.sqrt((Math.pow(inputLength,2)+Math.pow(inputWidth,2)));
+
+         System.out.println("\nAREA      : " + String.format("%.2f",inputArea) + "\nPERIMETER : "
+         + String.format("%.2f",inputPerimeter) + "\nDIAGONAL  : "
+         + String.format("%.2f",inputDiagonal));
 
         /*
          * Exercise 8.
@@ -221,7 +240,14 @@ public class ProblemSet2 {
          * Given a side length, print the area and perimeter of the corresponding hexagon.
          */
 
+         System.out.print("\nEnter a side length: ");
+         double inputSide = in.nextDouble();
 
+         double inputHexArea = ((3 * Math.sqrt(3))/2) * Math.pow(inputSide,2);
+         double inputHexPerimeter = inputSide * 6;
+
+         System.out.println("\nAREA      : " + String.format("%.2f",inputHexArea)
+         + "\nPERIMETER : " + String.format("%.2f",inputHexPerimeter));
 
         /*
          * Exercise 9.
@@ -229,7 +255,16 @@ public class ProblemSet2 {
          * Given a string, reverse and print the first and second halves of that string.
          */
 
+         System.out.print("\nEnter a String: ");
+         String inputString = in.next();
 
+         int stringLength = inputString.length();
+         int halfWay = (int) Math.floor(stringLength/2);
+
+         String firstHalf = inputString.substring(0,halfWay);
+         String secondHalf = inputString.substring(halfWay,stringLength);
+
+         System.out.println("\n" + secondHalf + firstHalf);
 
         /*
          * Exercise 10.
@@ -237,6 +272,15 @@ public class ProblemSet2 {
          * Given a first, middle, and last name, print the corresponding initials.
          */
 
+         System.out.print("\nEnter your first name: ");
+         String inputFirstName = in.next();
+         System.out.print("Enter your middle name: ");
+         String inputMiddleName = in.next();
+         System.out.print("Enter your last name:  ");
+         String inputLastName = in.next();
+
+         System.out.print("\n" + inputFirstName.substring(0,1) + inputMiddleName.substring(0,1)
+         + inputLastName.substring(0,1) + "\n");
 
 
         in.close();
