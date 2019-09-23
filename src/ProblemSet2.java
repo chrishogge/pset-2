@@ -137,6 +137,37 @@ public class ProblemSet2 {
          * and inches.
          */
 
+         final double INCHES_IN_MILE = 63360;
+         final double INCHES_IN_YARD = 36;
+         final double INCHES_IN_FOOT = 12;
+         final double INCHES_IN_INCHES = 1;
+
+         double milesRequired;
+         double yardsRequired;
+         double feetRequired;
+         double inchesRequired;
+         double inchesRemaining;
+
+         System.out.print("\nEnter a number of inches : ");
+         double inchesInput = in.nextDouble();
+
+         double inchArray[] = makeChange(inchesInput,INCHES_IN_MILE);
+         milesRequired = inchArray[0];
+         inchesRemaining = inchArray[1];
+         inchArray = makeChange(inchesRemaining,INCHES_IN_YARD);
+         yardsRequired = inchArray[0];
+         inchesRemaining = inchArray[1];
+         inchArray = makeChange(inchesRemaining,INCHES_IN_FOOT);
+         feetRequired = inchArray[0];
+         inchesRemaining = inchArray[1];
+         inchArray = makeChange(inchesRemaining,INCHES_IN_INCHES);
+         inchesRequired = inchArray[0];
+         inchesRemaining = inchArray[1];
+
+         System.out.print("\nMILES  : " + String.format("%.0f",milesRequired) + "\nYARDS  : "
+         + String.format("%.0f",yardsRequired) + "\nFEET   : " + String.format("%.0f",feetRequired)
+          + "\nINCHES : " + String.format("%.0f",inchesRequired) + "\n");
+
 
 
         /*
@@ -146,6 +177,25 @@ public class ProblemSet2 {
          * meters, and centimeters.
          */
 
+        final double CENTI_IN_KILO = 100000;
+        final double CENTI_IN_METER = 1000;
+
+        double kilosRequired;
+        double metersRequired;
+        double centiRemaining;
+
+        System.out.print("\nEnter a number of centimeters : ");
+        double centiInput = in.nextDouble();
+
+        double centiArray[] = makeChange(centiInput,CENTI_IN_KILO);
+        kilosRequired = centiArray[0];
+        centiRemaining = centiArray[1];
+        centiArray = makeChange(centiRemaining,CENTI_IN_METER);
+        metersRequired = centiArray[0];
+        centiRemaining = centiArray[1];
+
+        System.out.print("\nKILOMETERS  : " + String.format("%.0f",kilosRequired) + "\nMETERS      : "
+        + String.format("%.0f",metersRequired) + "\nCENTIMETERS : " + String.format("%.0f",centiRemaining) + "\n");
 
 
         /*
@@ -154,7 +204,7 @@ public class ProblemSet2 {
          * Given a diameter, print the area and circumference of the corresponding circle.
          */
 
-
+         
 
         /*
          * Exercise 7.
@@ -193,7 +243,9 @@ public class ProblemSet2 {
     }
     public static double[] makeChange(double startAmount, double changeAmount){
       double amountCurrentDenomination = Math.floor(startAmount/changeAmount);
+      // System.out.println(amountCurrentDenomination);
       double returnAmount = startAmount % changeAmount;
+      // System.out.println(returnAmount);
       double[] returnArray = {amountCurrentDenomination,returnAmount};
       return returnArray;
     }
