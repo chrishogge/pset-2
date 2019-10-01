@@ -1,17 +1,8 @@
 /**
  * Problem Set 2.
  *
- * It's time to put your skills to the test. This problem set focuses on prompting
- * the user for information, manipulating that information, and printing it in
- * specific formats.
- *
- * The specifications for each exercise are outlined below. Your job is to write
- * lines of code to produce answers to my questions. Each exercise requires that
- * you ask the user to enter one or more values. Your code must meet the
- * requirements set forth in this section (as well as the Deliverables section).
- *
- * Work through these exercises on your own. Experiment, make mistakes, ask
- * questions, and fix your mistakes. It's the only way to get good at programming.
+ * Copyright (c) 2019. UCVTS and its affiliated.
+ * Use is allowed as long as credit is given.
  */
 
 import java.util.Scanner;
